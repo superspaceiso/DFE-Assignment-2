@@ -2,8 +2,19 @@ $backgroundColour: #F9F9F9;
 $foregroundColour: #D3A36D;
 $backgroundImage: '../img/svg/tea-leaves.svg';
 
+:root{
+  font-family: 'Raleway', sans-serif;
+}
+
+h1{
+  font-size: 24px;
+}
+
 body{
+  margin: unset;
   background-color: $backgroundColour;
+  font-size: 18px;
+  font-weight: 500;
 
   &::before{
     content: "";
@@ -17,5 +28,52 @@ body{
     background-image: url($backgroundImage);
     background-repeat: no-repeat;
     background-size: cover;
+  }
+}
+
+.container{
+  width: 1090px;
+  margin: 0 auto;
+}
+
+.menu{
+  position: absolute;
+  top: 10px;
+  left: 8%;
+}
+
+.teaSelection{
+  display: grid;
+  grid-template-columns: repeat(3, [col-start] 1fr);
+  grid-template-rows: auto;
+  gap: 20px;
+
+
+  & > div{
+    height: 336px;
+    background-color: #FFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    -webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
+    -moz-box-shadow:    0 1px 2px 0 rgba(0,0,0,0.2);
+    box-shadow:         0 1px 2px 0 rgba(0,0,0,0.2);
+  }
+
+}
+
+
+
+.teas{
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: #FFF;
+  margin-top: 20px;
+
+  &:last-of-type{
+    margin-bottom: 20px;
+  }
+
+  h1{
+    margin: 0 0 20px 0;
   }
 }
