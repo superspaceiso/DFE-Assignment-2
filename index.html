@@ -11,23 +11,43 @@
 </head>
 
 <body>
-    <div class="menu">
-        <a id="menuBtn" href="#"><i class="fas fa-bars"></i>Menu</a>
-    </div>
-    <div class="container">
-
-        <div class="teaSelection">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+    <div class="splashScreen">
+        <div class="centreSplash">
+            <div class="splashLogo"><img src="img/svg/tea_cup.svg" alt=""></div>
+            <a href="#" id="enterBtn">Enter</a>
         </div>
+    </div>
 
+    <a id="menuBtn" href="#"><i class="fas fa-bars"></i>Menu</a>
+
+    <div class="menu">
+        <div><img src="img/svg/tea_cup.svg" alt=""></div>
+        <ul>
+            <li><a href="index.html#teaSelector">Home</a></li>
+            <li><a href="teas.html#blackTea">Black Tea</a></li>
+            <li><a href="teas.html#oolongTea">Oolong Tea</a></li>
+            <li><a href="teas.html#greenTea">Green Tea</a></li>
+            <li><a href="teas.html#yellowTea">Yellow Tea</a></li>
+            <li><a href="teas.html#whiteTea">White Tea</a></li>
+            <li><a href="teas.html#fermentedTea">Fermeted Tea</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="teaSelection">
+            <div><div class="teaSelector" id="blackTeaSelector"></div></div>
+            <div><div class="teaSelector" id="oolongTeaSelector"></div></div>
+            <div><div class="teaSelector" id="greenTeaSelector"></div></div>
+            <div><div class="teaSelector" id="yellowTeaSelector"></div></div>
+            <div><div class="teaSelector" id="whiteTeaSelector"></div></div>
+            <div><div class="teaSelector" id="fermentedTeaSelector"></div></div>
+        </div>
     </div>
 </body>
 
 <footer>
+    <script src="js/splashScreen.js"></script>
+    <script src="js/teaSelection.js"></script>
+    <script src="js/menu.js"></script>
 </footer>
 </html>

@@ -1,9 +1,22 @@
 $backgroundColour: #F9F9F9;
 $foregroundColour: #D3A36D;
-$backgroundImage: '../img/svg/tea-leaves.svg';
+$backgroundImage: '../img/svg/tea_leaves.svg';
+$blackTea: "../img/jpg/black_tea.jpg";
+$oolongTea: "../img/jpg/oolong_tea.jpg";
+$greenTea: "../img/jpg/green_tea.jpg";
+$yellowTea: "../img/jpg/yellow_tea.jpg";
+$whiteTea: "../img/jpg/white_tea.jpg";
+$fermentedTea: "../img/jpg/fermented_tea.jpg";
 
 :root{
   font-family: 'Raleway', sans-serif;
+  --menuWidth: 315px;
+  --menuBtnWidth: 80px;
+}
+
+html, body{
+  padding: 0;
+  margin: 0;
 }
 
 h1{
@@ -11,7 +24,6 @@ h1{
 }
 
 body{
-  margin: unset;
   background-color: $backgroundColour;
   font-size: 18px;
   font-weight: 500;
@@ -36,10 +48,151 @@ body{
   margin: 0 auto;
 }
 
-.menu{
+.splashScreen{
   position: absolute;
-  top: 10px;
-  left: 8%;
+  z-index: 4;
+  width: 100vw;
+  height: 100vh;
+  background-color: #D3A36D;
+
+  &::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .05;
+    z-index: -1;
+    background-image: url($backgroundImage);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.splashScreenAnimate{
+  animation: slideUp 500ms ease-in-out 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideUp{
+  100%{
+    height: 0;
+    display: none;
+  }
+}
+
+.splashLogo{
+  position: relative;
+  width: 186px;
+  height: auto;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.centreSplash{
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  top: calc(50% - 200px);
+  left: calc(50% - 200px);
+}
+
+#enterBtn{
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: calc(290px - calc(4px + 3px));
+  height: calc(80px - calc(4px + 3px) - 40px);
+  background-color: #FFF;
+  outline: 4px solid #FFF;
+  outline-offset: 3px;
+  font-size: 32px;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $foregroundColour;
+  text-align: center;
+  padding: 20px 0 20px 0;
+}
+
+.menuBtnAnimation{
+  color: #FFF !important;
+  transition: 100ms linear;
+}
+
+
+#menuBtn{
+  display: block;
+  position: fixed;
+  width: var(--menuBtnWidth);
+  z-index: 3;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 18px;
+  color: #000;
+  left: calc(calc(var(--menuWidth) / 2) - calc(var(--menuBtnWidth) / 2));
+  top: 20px;
+  text-align: center;
+
+  i{
+    padding-right: 5px;
+  }
+}
+
+.menu{
+  position: fixed;
+  width: var(--menuWidth);
+  height: 100vh;
+  background-color: $foregroundColour;
+  z-index: 2;
+  text-align: center;
+  top: 0;
+  left: 0;
+  transform: translateX(-315px);
+  transition: all 500ms;
+
+  & > div{
+    width: 140px;
+    margin: 0 auto;
+    padding: 60px 0 40px 0;
+    border-bottom: 2px solid #FFF;
+
+    img{
+      display: block;
+      height: 95px;
+      width: 81px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  ul{
+    list-style: none;
+    padding: unset;
+  }
+
+  li{
+    padding: 5px 0 5px 0;
+    text-transform: uppercase;
+
+    &:hover{
+      background-color: rgba(0,0,0, 0.10)
+    }
+  }
+
+  a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+}
+
+.menuOut{
+  transform: translateX(0);
 }
 
 .teaSelection{
@@ -55,13 +208,43 @@ body{
     border: 1px solid rgba(0, 0, 0, 0.2);
     padding: 10px;
     -webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
-    -moz-box-shadow:    0 1px 2px 0 rgba(0,0,0,0.2);
-    box-shadow:         0 1px 2px 0 rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
   }
 
 }
 
+.teaSelector{
+  height: 100%;
+  width: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 
+#blackTeaSelector{
+  background-image: url($blackTea);
+}
+
+#oolongTeaSelector{
+  background-image: url($oolongTea);
+}
+
+#greenTeaSelector{
+  background-image: url($greenTea);
+}
+
+#yellowTeaSelector{
+  background-image: url($yellowTea);
+}
+
+#whiteTeaSelector{
+  background-image: url($whiteTea);
+}
+
+#fermentedTeaSelector{
+  background-image: url($fermentedTea);
+}
 
 .teas{
   padding: 20px;

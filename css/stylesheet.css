@@ -1,11 +1,16 @@
 :root {
-  font-family: 'Raleway', sans-serif; }
+  font-family: 'Raleway', sans-serif;
+  --menuWidth: 315px;
+  --menuBtnWidth: 80px; }
+
+html, body {
+  padding: 0;
+  margin: 0; }
 
 h1 {
   font-size: 24px; }
 
 body {
-  margin: unset;
   background-color: #F9F9F9;
   font-size: 18px;
   font-weight: 500; }
@@ -18,7 +23,7 @@ body {
     height: 100%;
     opacity: .05;
     z-index: -1;
-    background-image: url("../img/svg/tea-leaves.svg");
+    background-image: url("../img/svg/tea_leaves.svg");
     background-repeat: no-repeat;
     background-size: cover; }
 
@@ -26,10 +31,122 @@ body {
   width: 1090px;
   margin: 0 auto; }
 
-.menu {
+.splashScreen {
   position: absolute;
-  top: 10px;
-  left: 8%; }
+  z-index: 4;
+  width: 100vw;
+  height: 100vh;
+  background-color: #D3A36D; }
+  .splashScreen::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .05;
+    z-index: -1;
+    background-image: url("../img/svg/tea_leaves.svg");
+    background-repeat: no-repeat;
+    background-size: cover; }
+
+.splashScreenAnimate {
+  animation: slideUp 500ms ease-in-out 1;
+  animation-fill-mode: forwards; }
+
+@keyframes slideUp {
+  100% {
+    height: 0;
+    display: none; } }
+.splashLogo {
+  position: relative;
+  width: 186px;
+  height: auto;
+  margin: 0 auto;
+  padding: 40px; }
+
+.centreSplash {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  top: calc(50% - 200px);
+  left: calc(50% - 200px); }
+
+#enterBtn {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: calc(290px - calc(4px + 3px));
+  height: calc(80px - calc(4px + 3px) - 40px);
+  background-color: #FFF;
+  outline: 4px solid #FFF;
+  outline-offset: 3px;
+  font-size: 32px;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #D3A36D;
+  text-align: center;
+  padding: 20px 0 20px 0; }
+
+.menuBtnAnimation {
+  color: #FFF !important;
+  transition: 100ms linear; }
+
+#menuBtn {
+  display: block;
+  position: fixed;
+  width: var(--menuBtnWidth);
+  z-index: 3;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 18px;
+  color: #000;
+  left: calc(calc(var(--menuWidth) / 2) - calc(var(--menuBtnWidth) / 2));
+  top: 20px;
+  text-align: center; }
+  #menuBtn i {
+    padding-right: 5px; }
+
+.menu {
+  position: fixed;
+  width: var(--menuWidth);
+  height: 100vh;
+  background-color: #D3A36D;
+  z-index: 2;
+  text-align: center;
+  top: 0;
+  left: 0;
+  transform: translateX(-315px);
+  transition: all 500ms; }
+  .menu > div {
+    width: 140px;
+    margin: 0 auto;
+    padding: 60px 0 40px 0;
+    border-bottom: 2px solid #FFF; }
+    .menu > div img {
+      display: block;
+      height: 95px;
+      width: 81px;
+      margin-left: auto;
+      margin-right: auto; }
+  .menu ul {
+    list-style: none;
+    padding: unset; }
+  .menu li {
+    padding: 5px 0 5px 0;
+    text-transform: uppercase; }
+    .menu li:hover {
+      background-color: rgba(0, 0, 0, 0.1); }
+  .menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold; }
+
+.menuOut {
+  transform: translateX(0); }
 
 .teaSelection {
   display: grid;
@@ -44,6 +161,31 @@ body {
     -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2); }
+
+.teaSelector {
+  height: 100%;
+  width: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+#blackTeaSelector {
+  background-image: url("../img/jpg/black_tea.jpg"); }
+
+#oolongTeaSelector {
+  background-image: url("../img/jpg/oolong_tea.jpg"); }
+
+#greenTeaSelector {
+  background-image: url("../img/jpg/green_tea.jpg"); }
+
+#yellowTeaSelector {
+  background-image: url("../img/jpg/yellow_tea.jpg"); }
+
+#whiteTeaSelector {
+  background-image: url("../img/jpg/white_tea.jpg"); }
+
+#fermentedTeaSelector {
+  background-image: url("../img/jpg/fermented_tea.jpg"); }
 
 .teas {
   padding: 20px;
