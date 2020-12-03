@@ -48,6 +48,8 @@ body{
   margin: 0 auto;
 }
 
+//Splash Screen
+
 .splashScreen{
   position: absolute;
   z-index: 4;
@@ -69,6 +71,8 @@ body{
     background-size: cover;
   }
 }
+
+//Slide div upwards
 
 .splashScreenAnimate{
   animation: slideUp 500ms ease-in-out 1;
@@ -98,6 +102,8 @@ body{
   left: calc(50% - 200px);
 }
 
+//Splash Screen Enter Button
+
 #enterBtn{
   position: relative;
   display: block;
@@ -116,11 +122,14 @@ body{
   padding: 20px 0 20px 0;
 }
 
+//Change Menu button from black to white when the menu is expanded.
+
 .menuBtnAnimation{
   color: #FFF !important;
   transition: 100ms linear;
 }
 
+//Menu Button
 
 #menuBtn{
   display: block;
@@ -140,6 +149,8 @@ body{
     padding-right: 5px;
   }
 }
+
+//Menu Bar
 
 .menu{
   position: fixed;
@@ -191,6 +202,8 @@ body{
 
 }
 
+//Slide menu out
+
 .menuOut{
   transform: translateX(0);
 }
@@ -216,10 +229,23 @@ body{
 
 }
 
+//Contract Tea Selector
+
 .teaSelectionContract{
   animation: contract 1s ease-in-out 1 !important;
   animation-fill-mode: forwards;
 }
+
+@keyframes contract{
+  0%{
+    transform: scale(1.25,1.25);
+  }
+  100%{
+    transform: scale(1,1);
+  }
+}
+
+//Expand Tea Selector
 
 .teaSelectionExpand{
   animation: expand 500ms ease-in-out 1;
@@ -235,22 +261,10 @@ body{
   }
 }
 
-@keyframes contract{
-  0%{
-    transform: scale(1.25,1.25);
-  }
-  100%{
-    transform: scale(1,1);
-  }
-}
+//Contract selector height to leave space for tea name and link.
 
 .teaSelectorContract{
   animation: heightContract 500ms ease-in-out 1;
-  animation-fill-mode: forwards;
-}
-
-.teaSelectorExpand{
-  animation: heightExpand 500ms ease-in-out 1;
   animation-fill-mode: forwards;
 }
 
@@ -261,6 +275,13 @@ body{
   100%{
     height: calc(100% - 60px);
   }
+}
+
+//Reset selector image height.
+
+.teaSelectorExpand{
+  animation: heightExpand 500ms ease-in-out 1;
+  animation-fill-mode: forwards;
 }
 
 @keyframes heightExpand{

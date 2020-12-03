@@ -168,6 +168,11 @@ body {
   animation: contract 1s ease-in-out 1 !important;
   animation-fill-mode: forwards; }
 
+@keyframes contract {
+  0% {
+    transform: scale(1.25, 1.25); }
+  100% {
+    transform: scale(1, 1); } }
 .teaSelectionExpand {
   animation: expand 500ms ease-in-out 1;
   animation-fill-mode: forwards; }
@@ -177,17 +182,8 @@ body {
     transform: scale(1, 1); }
   100% {
     transform: scale(1.25, 1.25); } }
-@keyframes contract {
-  0% {
-    transform: scale(1.25, 1.25); }
-  100% {
-    transform: scale(1, 1); } }
 .teaSelectorContract {
   animation: heightContract 500ms ease-in-out 1;
-  animation-fill-mode: forwards; }
-
-.teaSelectorExpand {
-  animation: heightExpand 500ms ease-in-out 1;
   animation-fill-mode: forwards; }
 
 @keyframes heightContract {
@@ -195,6 +191,10 @@ body {
     height: 100%; }
   100% {
     height: calc(100% - 60px); } }
+.teaSelectorExpand {
+  animation: heightExpand 500ms ease-in-out 1;
+  animation-fill-mode: forwards; }
+
 @keyframes heightExpand {
   0% {
     height: calc(100% - 60px); }
