@@ -149,12 +149,14 @@ body {
   transform: translateX(0); }
 
 .teaSelection {
+  position: relative;
+  top: 10vh;
   display: grid;
   grid-template-columns: repeat(3, [col-start] 1fr);
   grid-template-rows: auto;
   gap: 20px; }
   .teaSelection > div {
-    height: 336px;
+    min-height: 336px;
     background-color: #FFF;
     border: 1px solid rgba(0, 0, 0, 0.2);
     padding: 10px;
@@ -162,12 +164,74 @@ body {
     -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2); }
 
+.teaSelectionContract {
+  animation: contract 1s ease-in-out 1 !important;
+  animation-fill-mode: forwards; }
+
+.teaSelectionExpand {
+  animation: expand 500ms ease-in-out 1;
+  animation-fill-mode: forwards; }
+
+@keyframes expand {
+  0% {
+    transform: scale(1, 1); }
+  100% {
+    transform: scale(1.25, 1.25); } }
+@keyframes contract {
+  0% {
+    transform: scale(1.25, 1.25); }
+  100% {
+    transform: scale(1, 1); } }
+.teaSelectorContract {
+  animation: heightContract 500ms ease-in-out 1;
+  animation-fill-mode: forwards; }
+
+.teaSelectorExpand {
+  animation: heightExpand 500ms ease-in-out 1;
+  animation-fill-mode: forwards; }
+
+@keyframes heightContract {
+  0% {
+    height: 100%; }
+  100% {
+    height: calc(100% - 60px); } }
+@keyframes heightExpand {
+  0% {
+    height: calc(100% - 60px); }
+  100% {
+    height: 100%; } }
 .teaSelector {
+  float: left;
   height: 100%;
-  width: auto;
+  width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center; }
+  background-position: center;
+  transform: unset;
+  transition: transform 500ms ease-in-out; }
+
+.teaInfoReveal {
+  visibility: visible !important;
+  transition: visibility 0ms 500ms ease-in-out; }
+
+.teaInfo {
+  visibility: hidden;
+  float: left;
+  width: 100%;
+  padding-top: 10px;
+  height: 50px; }
+  .teaInfo a {
+    text-decoration: none;
+    font-style: italic;
+    color: inherit;
+    font-size: 14px;
+    font-weight: 500; }
+    .teaInfo a:hover {
+      text-decoration: underline; }
+
+.teaName {
+  font-size: 22px;
+  font-weight: 600; }
 
 #blackTeaSelector {
   background-image: url("../img/jpg/black_tea.jpg"); }
